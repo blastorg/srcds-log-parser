@@ -1,0 +1,23 @@
+name: Validate Lint & build.
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Add GH package repository
+        run: |
+          echo "@blastorg:registry = https://npm.pkg.github.com" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_READ_TOKEN }}" >> ~/.npmrc
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build

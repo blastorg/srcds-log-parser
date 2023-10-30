@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Add GH package repository
+        run: |
+          echo "@blastorg:registry = https://npm.pkg.github.com" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_READ_TOKEN }}" >> ~/.npmrc
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+  release:
+    if: "!startsWith(github.event.head_commit.message, '[skip ci]')"
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    name: "Create a new release & update changelog using semantic-release"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Add GH package repository
+        run: |
+          echo "@blastorg:registry = https://npm.pkg.github.com" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_WRITE_TOKEN }}" >> ~/.npmrc
+      - run: npm ci
+      - run: npm run build
+      - name: semantic-release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Print Version
+        run: echo "Bumped to version ${{ steps.semantic-release.outputs }}"
