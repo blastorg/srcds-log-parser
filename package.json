@@ -1,34 +1,63 @@
 {
-	"name": "srcds-monorepo",
-	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
-	"engines": {
-		"node": ">=14.0.0"
-	},
-	"devDependencies": {
-		"@types/jest": "^27.0.3",
-		"@types/node": "^16.11.12",
-		"@typescript-eslint/eslint-plugin": "^5.7.0",
-		"@typescript-eslint/parser": "^5.7.0",
-		"eslint": "^8.4.1",
-		"eslint-config-airbnb-base": "^15.0.0",
-		"eslint-plugin-import": "^2.25.3",
-		"jest": "^27.4.5",
-		"rollup": "^2.61.1",
-		"rollup-plugin-typescript2": "^0.31.1",
-		"ts-jest": "^27.1.1",
-		"typescript": "^4.5.4"
-	},
-	"scripts": {
-		"prepare": "yarn run rollup:build && yarn run test",
-		"build": "yarn run rollup:build",
-		"watch": "yarn run rollup:watch",
-		"rollup:build": "NODE_ENV=production rollup -c rollup.config.js",
-		"rollup:watch": "yarn run rollup:build -w",
-		"test": "yarn run test:jest && yarn run test:eslint",
-		"test:jest": "jest --config jest.config.json --no-cache",
-		"test:eslint": "eslint --ext .ts --ignore-path .gitignore packages/*/src/**/*.ts"
-	}
+  "name": "srcds-log-parser",
+  "version": "1.0.0",
+  "description": "Log parser for Source Dedicated Server",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "publishConfig": {
+    "@blastorg:registry": "https://npm.pkg.github.com"
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "master"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "test": "jest --config jest.config.json --no-cache",
+    "lint": "eslint --ext .ts --ignore-path .gitignore src/**/*.ts",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blastorg/srcds-log-parser.git"
+  },
+  "keywords": [
+    "srcds",
+    "log",
+    "parser",
+    "counter-strike",
+    "counter-strike-2"
+  ],
+  "author": "blastorg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blastorg/srcds-log-parser/issues"
+  },
+  "homepage": "https://github.com/blastorg/srcds-log-parser#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.1",
+    "@semantic-release/release-notes-generator": "^12.0.0",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/jest": "^29.5.6",
+    "@types/node": "^20.8.9",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  }
 }

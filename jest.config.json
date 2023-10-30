@@ -1,7 +1,7 @@
 {
-	"name": "srcds-monorepo",
-	"verbose": true,
-	"preset": "ts-jest",
-	"testEnvironment": "node",
-	"testMatch": ["<rootDir>/packages/*/test/*.test.ts"]
+  "name": "srcds-monorepo",
+  "verbose": true,
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "testMatch": ["<rootDir>/tests/**/*.test.ts"]
 }
