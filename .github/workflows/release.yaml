@@ -13,10 +13,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Add GH package repository
-        run: |
-          echo "@blastorg:registry = https://npm.pkg.github.com" > ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_READ_TOKEN }}" >> ~/.npmrc
       - run: npm ci
       - run: npm run lint
       - run: npm run test

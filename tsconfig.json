@@ -3,8 +3,8 @@
     /* Language and Environment */
     "target": "ES2020",
     /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "rootDir": "./src/" /* Specify the root folder within your source files. */,
+    "module": "Node16" /* Specify what module code is generated. */,
+    "rootDirs": ["./src/", "./tests/"],
     "outDir": "./lib/",
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,

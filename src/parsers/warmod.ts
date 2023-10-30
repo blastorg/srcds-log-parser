@@ -13,6 +13,6 @@ export const warmodParser = defineParser<WarmodEvent>({
   patterns: [concatPattern`^\\[WarMod_BFG\\] (?<payload>.+)$`],
 
   parse({ payload }) {
-    return JSON.parse(payload);
+    return JSON.parse(payload) as Record<string, string>;
   },
 });
