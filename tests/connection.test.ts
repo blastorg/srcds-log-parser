@@ -5,7 +5,7 @@ import { unknownTeam } from "./helpers/teams";
 
 describe("connection", (): void => {
   it('should correctly parse sub-event "connected"', () => {
-    const log = getEventString('"ConnectionPlayer<93><[U:1:0123465789]><>" connected, address ""');
+    const log = getEventString('"ConnectionPlayer<93><[U:1:230970467]><>" connected, address ""');
 
     const result = parse(log);
 
@@ -18,7 +18,7 @@ describe("connection", (): void => {
         kind: "player",
 
         entityId: 93,
-        steamId: "[U:1:0123465789]",
+        steamId: "76561198191236195",
 
         name: "ConnectionPlayer",
 
@@ -43,7 +43,7 @@ describe("connection", (): void => {
         kind: "player",
 
         entityId: 93,
-        steamId: "[U:1:230970467]",
+        steamId: "76561198191236195",
 
         name: "ConnectionPlayer",
 
@@ -70,7 +70,7 @@ describe("connection", (): void => {
         kind: "player",
 
         entityId: 93,
-        steamId: "[U:1:230970467]",
+        steamId: "76561198191236195",
 
         name: "ConnectionPlayer",
 

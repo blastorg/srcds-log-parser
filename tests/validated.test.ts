@@ -15,7 +15,7 @@ describe("validated", (): void => {
             kind: "player",
 
             entityId: 93,
-            steamId: "[U:1:230970467]",
+            steamId: "76561198191236195",
 
             name: "PlayerName",
 

@@ -18,7 +18,7 @@ describe("player_updated", (): void => {
         kind: "player",
 
         entityId: 93,
-        steamId: "[U:1:230970467]",
+        steamId: "76561198191236195",
 
         name: "OldName",
 
