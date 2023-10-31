@@ -133,7 +133,7 @@ export const parseEntity = (rawEntity: string): Entity => {
     return {
       kind: "player",
       entityId,
-      steamId,
+      steamId: convertSteamIdTo64Dec(steamId),
       name,
       team,
     };
@@ -143,3 +143,10 @@ export const parseEntity = (rawEntity: string): Entity => {
 };
 
 export const parseVector = (rawVector: string): Vector => rawVector.split(" ").map(Number) as Vector;
+
+export const convertSteamIdTo64Dec = (steamId: string): string => {
+  const cleanedSteamId = steamId.replaceAll(/\[|\]/g, "");
+  const uSteamIdSplit = cleanedSteamId.split(":");
+  const commId = BigInt(uSteamIdSplit[2]) + BigInt(76561197960265728);
+  return commId.toString();
+};
