@@ -6,9 +6,9 @@ import { counterTerroristTeam } from "./helpers/teams";
 describe("parser", () => {
   it('should correctly parse "receivedAt"', () => {
     const logs = [
-      getEventString('"Zen<1><[U:1:1520473131]><>" connected, address "10.200.109.185:59771"'),
+      getEventString('"PlayerName<1><[U:1:230970467]><>" connected, address ""'),
       getEventString(
-        '"Grim<6><[U:1:230970467]><CT>" [-652 -1179 -168] killed "MAUISNAKE<8><[U:1:19821282]><TERRORIST>" [-375 -2376 -98] with "m4a1_silencer"',
+        '"PlayerName<93><[U:1:230970467]><CT>" [-652 -1179 -168] killed "PlayerName<92><[U:1:230970467]><TERRORIST>" [-375 -2376 -98] with "m4a1_silencer"',
       ),
     ];
 
@@ -32,7 +32,7 @@ describe("parser", () => {
             kind: "player",
 
             entityId: 93,
-            steamId: "[U:1:230970467]",
+            steamId: "76561198191236195",
 
             name: "PlayerName",
 
