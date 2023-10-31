@@ -1,5 +1,5 @@
 {
-  "name": "srcds-log-parser",
+  "name": "@blastorg/srcds-log-parser",
   "version": "1.0.0",
   "description": "Log parser for Source Dedicated Server",
   "main": "./lib/index.js",
@@ -7,7 +7,7 @@
     "lib/**/*"
   ],
   "publishConfig": {
-    "@blastorg:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "release": {
     "branches": [
