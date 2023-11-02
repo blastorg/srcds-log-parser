@@ -33,6 +33,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          NPM_TOKEN: ${{ secrets.GH_PACKAGES_WRITE_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPMJS_READWRITE_TOKEN }}
       - name: Print Version
         run: echo "Bumped to version ${{ steps.semantic-release.outputs }}"
