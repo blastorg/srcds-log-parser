@@ -1,7 +1,7 @@
 # srcds-log-parser
 
 ![build & release](https://github.com/blastorg/srcds-log-parser/actions/workflows/release.yaml/badge.svg)
-![package downloads](https://img.shields.io/npm/dy/%40blastorg%2Fsrcds-log-parser)
+![package downloads](https://img.shields.io/npm/v/%40blastorg/srcds-log-parser)
 
 A log parsing tool, that can be used for parsing logs sent from CS2 game server via an HTTP endpoint.
 

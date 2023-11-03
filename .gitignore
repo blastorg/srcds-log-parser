@@ -15,3 +15,5 @@ app.mjs
 docs/.vuepress/dist
 
 lib
+
+.env
