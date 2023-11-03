@@ -7,15 +7,7 @@
     "lib/**/*"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org",
     "access": "public"
-  },
-  "release": {
-    "branches": [
-      {
-        "name": "master"
-      }
-    ]
   },
   "scripts": {
     "build": "rimraf lib && tsc",
