@@ -3,6 +3,15 @@
 
 ### Bug Fixes
 
+* **ci:** fixes versioning on github repository for version 3.0.4 ([50a342d](https://github.com/blastorg/srcds-log-parser/commit/50a342d8fcd8e5408c15ef6d757476efb07e63f7))
+* **ci:** uses plugin to get semantic new version ([8b863eb](https://github.com/blastorg/srcds-log-parser/commit/8b863eb90b721c28b0df0a84b01f4be7a614b0aa))
+* **release:** removes release section from package.json ([564ce07](https://github.com/blastorg/srcds-log-parser/commit/564ce07e96d88770a515b351340975fe84c5856c))
+
+## [2.0.3](https://github.com/blastorg/srcds-log-parser/compare/v2.0.2...v2.0.3) (2023-11-03)
+
+
+### Bug Fixes
+
 * **ci:** uses plugin to get semantic new version ([8b863eb](https://github.com/blastorg/srcds-log-parser/commit/8b863eb90b721c28b0df0a84b01f4be7a614b0aa))
 * **release:** removes release section from package.json ([564ce07](https://github.com/blastorg/srcds-log-parser/commit/564ce07e96d88770a515b351340975fe84c5856c))
 
