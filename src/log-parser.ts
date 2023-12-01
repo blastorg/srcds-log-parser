@@ -5,6 +5,7 @@ import {
   connectionParser,
   entityTriggeredParser,
   killedParser,
+  leftBuyzoneWithParser,
   playerUpdateParser,
   projectileSpawnedParser,
   purchasedParser,
@@ -25,6 +26,7 @@ import {
   ConnectionEvent,
   EntityTriggeredEvent,
   KilledEvent,
+  LeftBuyzoneWithEvent,
   PlayerUpdateEvent,
   ProjectileSpawnedEvent,
   PurchasedEvent,
@@ -48,6 +50,7 @@ export const defaultParsers = [
   connectionParser,
   entityTriggeredParser,
   killedParser,
+  leftBuyzoneWithParser,
   playerUpdateParser,
   projectileSpawnedParser,
   purchasedParser,
@@ -71,6 +74,7 @@ export type Events =
   | ConnectionEvent
   | EntityTriggeredEvent
   | KilledEvent
+  | LeftBuyzoneWithEvent
   | PlayerUpdateEvent
   | ProjectileSpawnedEvent
   | PurchasedEvent
