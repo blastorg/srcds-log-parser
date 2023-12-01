@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/blastorg/srcds-log-parser/compare/v2.0.3...v2.1.0) (2023-12-01)
+
+
+### Bug Fixes
+
+* **left_buyzone_with:** changes payload to match entity triggered event type ([98fee4c](https://github.com/blastorg/srcds-log-parser/commit/98fee4cac83b5fa58a98fc1932976b0e9338eb06))
+
+
+### Features
+
+* **parsers:** adds parser for parsing left-buyzone-with ([001e89f](https://github.com/blastorg/srcds-log-parser/commit/001e89fc2382fa4a519ee2da46e8b2e7c07b8c7a))
+
 ## [2.0.3](https://github.com/blastorg/srcds-log-parser/compare/v2.0.2...v2.0.3) (2023-11-03)
 
 
