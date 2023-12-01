@@ -5,6 +5,7 @@ export * from "./attacked";
 export * from "./connection";
 export * from "./entity-triggered";
 export * from "./killed";
+export * from "./left-buyzone-with";
 export * from "./player-update";
 export * from "./projectile-spawned";
 export * from "./purchased";
