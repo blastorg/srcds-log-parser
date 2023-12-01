@@ -25,7 +25,8 @@ describe("left buyzone with", (): void => {
 
         team: counterTerroristTeam,
       },
-      items: ["weapon_knife_butterfly", "weapon_usp_silencer", "kevlar(100)"],
+      kind: "left_buyzone_with",
+      value: ["weapon_knife_butterfly", "weapon_usp_silencer", "kevlar(100)"],
     });
   });
 });

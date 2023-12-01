@@ -4,7 +4,8 @@ import { Entity, entityRe, parseEntity } from "../entities";
 
 export type LeftBuyzoneWithEventPayload = {
   entity: Entity;
-  items: string[];
+  kind: string;
+  value: string[];
 };
 
 export type LeftBuyzoneWithEvent = IBaseEvent<"left_buyzone_with", LeftBuyzoneWithEventPayload>;
@@ -14,16 +15,13 @@ export type LeftBuyzoneWithEvent = IBaseEvent<"left_buyzone_with", LeftBuyzoneWi
 export const leftBuyzoneWithParser = defineParser<LeftBuyzoneWithEvent>({
   type: "left_buyzone_with",
 
-  patterns: [concatPattern`^(?<entity>${entityRe}) left buyzone with (?<items>\\[.*\\])$`],
+  patterns: [concatPattern`^(?<entity>${entityRe}) left buyzone with (?<value>\\[.*\\])$`],
 
-  parse({
-    entity,
-
-    items,
-  }) {
+  parse({ entity, kind = "left_buyzone_with", value }) {
     return {
       entity: parseEntity(entity),
-      items: items.trim().replaceAll("[", "").replaceAll("]", "").split(" ").slice(1, -1),
+      kind,
+      value: value.trim().replaceAll("[", "").replaceAll("]", "").split(" ").slice(1, -1),
     };
   },
 });
