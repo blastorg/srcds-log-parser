@@ -3,7 +3,7 @@ import { concatPattern } from "../helpers";
 import { Entity, entityRe, parseEntity } from "../entities";
 
 export type LeftBuyzoneWithEventPayload = {
-  player: Entity;
+  entity: Entity;
   items: string[];
 };
 
@@ -14,15 +14,15 @@ export type LeftBuyzoneWithEvent = IBaseEvent<"left_buyzone_with", LeftBuyzoneWi
 export const leftBuyzoneWithParser = defineParser<LeftBuyzoneWithEvent>({
   type: "left_buyzone_with",
 
-  patterns: [concatPattern`^(?<player>${entityRe}) left buyzone with (?<items>\\[.*\\])$`],
+  patterns: [concatPattern`^(?<entity>${entityRe}) left buyzone with (?<items>\\[.*\\])$`],
 
   parse({
-    player,
+    entity,
 
     items,
   }) {
     return {
-      player: parseEntity(player),
+      entity: parseEntity(entity),
       items: items.trim().replaceAll("[", "").replaceAll("]", "").split(" ").slice(1, -1),
     };
   },

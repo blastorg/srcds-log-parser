@@ -15,7 +15,7 @@ describe("left buyzone with", (): void => {
 
     expect(result.type).toBe("left_buyzone_with");
     expect(result.payload).toMatchObject({
-      player: {
+      entity: {
         kind: "player",
 
         entityId: 93,
